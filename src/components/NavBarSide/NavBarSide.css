@@ -1,3 +1,7 @@
+.navBarSide{
+    margin-top: 120px;
+}
+
 .navBarSide > ul > li{
     display: flex;
     justify-content: center;

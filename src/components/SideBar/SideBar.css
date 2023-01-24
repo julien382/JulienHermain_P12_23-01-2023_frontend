@@ -1,13 +1,18 @@
 .sideBar{
+    min-height: 900px;
     height: 100%;
     width: 117px;
     background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .copiryght{
+    display: block;
     color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    margin-bottom: 120px;
 }

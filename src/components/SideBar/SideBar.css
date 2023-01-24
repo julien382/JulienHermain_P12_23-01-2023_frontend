@@ -1,0 +1,13 @@
+.sideBar{
+    height: 100%;
+    width: 117px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.copiryght{
+    color: white;
+}

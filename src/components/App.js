@@ -4,6 +4,7 @@ import '../styles/index.css';
 import Header from './Header/Header';
 import { useEffect, useState } from 'react';
 import { getUser } from '../utils/fetch.js';
+import SideBar from './SideBar/SideBar';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
   return (
     <div id="app">
       <Header />
+      <SideBar />
       {user && user.userInfos.firstName}
     </div>
   );

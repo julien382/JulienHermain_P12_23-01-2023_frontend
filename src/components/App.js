@@ -1,33 +1,22 @@
 import '../styles/reset.css';
 import '../styles/index.css';
+import {Routes, Route} from "react-router-dom"
 
-import Header from './Header/Header';
-import { useEffect, useState } from 'react';
-import { getUser } from '../utils/fetch.js';
-import SideBar from './SideBar/SideBar';
+
+import Layout from '../pages/Layout/Layout';
+import Default from './Default/Default';
+import Home from './Home/Home';
 
 
 function App() {
 
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getUser(12)
-      setUser(data)
-      console.log(data);
-
-    }
-    fetchData()
-      
-  }, [])
-  console.log(user);
-
   return (
     <div id="app">
-      <Header />
-      <SideBar />
-      {user && user.userInfos.firstName}
+      <Routes>
+        <Route path="/user/:id" element={<Layout><Home /></Layout>} />
+        <Route path="/" element={<Default />} />
+        <Route path="/*" element={<Default />} />
+      </Routes>
     </div>
   );
 }

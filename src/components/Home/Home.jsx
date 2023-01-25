@@ -3,6 +3,7 @@ import './Home.css'
 import { getUser } from '../../utils/fetch.js';
 import { getActivity } from '../../utils/fetch.js';
 import { useNavigate, useParams } from 'react-router-dom';
+import Name from '../Name/Name';
 
 const Home = () => {
 
@@ -46,10 +47,11 @@ const Home = () => {
     if (user, activity) {
         return (
             <div className='home'>
-                {/*component*/}{user.userInfos.firstName}
+                <Name name={user.userInfos.firstName} />
+                
+                {/*graph*/}
                 {/*component*/}{activity.userId}
 
-                {/*graph*/}
 
             </div>
         )

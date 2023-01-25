@@ -46,8 +46,8 @@ const Home = () => {
     if (user, activity) {
         return (
             <div className='home'>
-                {user.userInfos.firstName}
-                {activity.userId}
+                {/*component*/}{user.userInfos.firstName}
+                {/*component*/}{activity.userId}
 
                 {/*graph*/}
 

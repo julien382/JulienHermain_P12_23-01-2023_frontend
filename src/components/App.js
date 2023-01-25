@@ -13,8 +13,8 @@ function App() {
   return (
     <div id="app">
       <Routes>
-        <Route path="/user/:id" element={<Layout><Home /></Layout>} />
         <Route path="/" element={<Default />} />
+        <Route path="/user/:id" element={<Layout><Home /></Layout>} />
         <Route path="/*" element={<Default />} />
       </Routes>
     </div>

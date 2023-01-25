@@ -1,5 +1,5 @@
 .sideBar{
-    min-height: 900px;
+    min-height: 989px;
     height: 100%;
     width: 117px;
     background-color: black;
@@ -14,5 +14,5 @@
     color: white;
     writing-mode: vertical-rl;
     transform: rotate(-180deg);
-    margin-bottom: 120px;
+    margin-bottom: 50px;
 }

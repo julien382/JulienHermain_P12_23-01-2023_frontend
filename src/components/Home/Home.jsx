@@ -14,8 +14,8 @@ const Home = () => {
       const fetchData = async () => {
         const data = await getUser(id)
         setUser(data)
+        // redirect error
         if (data === undefined) {
-            // redirect error
             navigate("/")
         }
         console.log(data);
@@ -31,13 +31,14 @@ const Home = () => {
             <div className='home'>
                 {user.userInfos.firstName}
 
+                {/*graph*/}
+
             </div>
         )
     }
     else{
         return null
     }
-
 
 }
 

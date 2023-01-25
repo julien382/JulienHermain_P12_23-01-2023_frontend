@@ -13,7 +13,8 @@
     margin: 25px;
     width: 10%;
     height: 100px;
-    color: white;
+    font-size: 28px;
+    color: red;
     border-radius: 10px;
-    background-color:rgb(43, 151, 157);
+    background-color:black;
 }

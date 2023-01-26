@@ -11,26 +11,25 @@ const Sessions = ({dataSessions}) => {
     return (
         <div className='sessions'>
             <h4>Durée moyenne des sessions</h4> 
-            <ResponsiveContainer width="100%" height="100%">
             <LineChart
-                width={500}
-                height={300}
+                width={258}
+                height={263}
                 data={data.day}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
+                <CartesianGrid  vertical={false} horizontal={false} />
+                <XAxis 
+                 dataKey="day"
+                 tick={{ fill: 'white', opacity: '.7' }}
+                 tickLine={false}
+                 tickMargin={5}
+                 interval="preserveStartEnd"
+                 axisLine={false}/>
+                <YAxis 
+                 hide={true} domain={['dataMin-20', 'dataMax+40']}/>
                 <Tooltip />
                 <Legend />
                 <Line type="monotone" dataKey={data.sessionLength} stroke="#8884d8" activeDot={{ r: 8 }} />
             </LineChart>
-        </ResponsiveContainer>
             
         </div>
     )

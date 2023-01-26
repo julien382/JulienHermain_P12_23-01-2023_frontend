@@ -66,13 +66,16 @@ const Home = () => {
         return (
             <div className='home'>
                 <Name name={user.userInfos.firstName} />
-                <div>
-                  <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={user.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
-                  <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={user.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
-                  <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={user.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
-                  <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={user.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
+                <div className='row'>
+                  <Sessions dataSessions={sessions.sessions}/>
+                  <div>
+                    <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={user.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
+                    <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={user.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
+                    <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={user.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
+                    <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={user.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
+                  </div>
+                  
                 </div>
-                <Sessions dataSessions={sessions.sessions}/>
                 {/*graph*/}
                 {/*component{activity.userId}*/}
 

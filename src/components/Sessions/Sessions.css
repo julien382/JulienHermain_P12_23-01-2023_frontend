@@ -1,0 +1,17 @@
+.sessions{
+    position: relative;
+    width: 258px;
+    height: 263px;
+    background-color: #FF0000;
+    border-radius: 5px;
+}
+
+.sessions > h4{
+    position: absolute;
+    color: white;
+    opacity: 0.5;
+    top: 29px;
+    left: 34px;
+    width: 145px;
+    font-size: 15px;
+}

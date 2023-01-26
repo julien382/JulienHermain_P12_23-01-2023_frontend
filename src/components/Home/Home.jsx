@@ -4,7 +4,7 @@ import calories from "../../assets/calories.svg"
 import proteines from "../../assets/proteines.svg"
 import glucides from "../../assets/glucides.svg"
 import lipides from "../../assets/lipides.svg"
-import { getSessions, getActivity, getUser } from '../../utils/fetch.js';
+import { getSessions, getActivity, getUser, getPerformance } from '../../utils/fetch.js';
 import { useNavigate, useParams } from 'react-router-dom';
 import Name from '../Name/Name';
 import Sessions from '../Sessions/Sessions'
@@ -15,13 +15,13 @@ const Home = () => {
 
     const navigate = useNavigate();
 
-    const [user, setUser] = useState(null)
+    const [userMainData, setUserMainData] = useState(null)
     const {id} = useParams()
 
     useEffect(() => {
       const fetchData = async () => {
         const data = await getUser(id)
-        setUser(data)
+        setUserMainData(data)
         // redirect error
         if (data === undefined) {
             navigate("/")
@@ -62,23 +62,40 @@ const Home = () => {
         
     }, [id])
 
-    if (user && activity && sessions) {
+    const [performance, setPerformance] = useState(null)
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const data = await getPerformance(id)
+        setPerformance(data)
+
+        console.log(data);
+  
+      }
+      fetchData()
+        
+    }, [id])
+
+    if (userMainData && activity && sessions && performance) {
         return (
             <div className='home'>
-                <Name name={user.userInfos.firstName} />
+                <Name name={userMainData.userInfos.firstName} />
                 <div className='row'>
-                  <Sessions dataSessions={sessions.sessions}/>
+                  {/*graph1*/}
+                  <div className='row'>
+                    <Sessions dataSessions={sessions.sessions}/>
+                    {/*graph3*/}
+                    {/*graph4*/}
+                  </div>
                   <div>
-                    <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={user.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
-                    <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={user.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
-                    <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={user.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
-                    <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={user.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
+                    <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={userMainData.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
+                    <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={userMainData.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
+                    <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={userMainData.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
+                    <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={userMainData.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
                   </div>
                   
                 </div>
-                {/*graph*/}
                 {/*component{activity.userId}*/}
-
 
             </div>
         )

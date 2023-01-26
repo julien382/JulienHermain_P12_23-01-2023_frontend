@@ -11,6 +11,7 @@ import Sessions from '../Sessions/Sessions'
 import Activity from '../Activity/Activity'
 import Performance from '../Performance/Performance'
 import CardNutrition from '../CardNutrition/CardNutrition';
+import Score from '../Score/Score'
 
 
 const Home = () => {
@@ -88,7 +89,7 @@ const Home = () => {
                 <div className='row'>
                   <Sessions dataSessions={sessions.sessions}/>
                   <Performance dataPerformance={performance.data}/>
-                  {/*graph4*/}
+                  <Score name={userMainData.todayScore} />
                 </div>
 
                 </div>

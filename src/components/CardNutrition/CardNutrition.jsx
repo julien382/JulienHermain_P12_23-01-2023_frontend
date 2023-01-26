@@ -1,11 +1,11 @@
 import './CardNutrition.css'
 
-const cardNutrition = ({logo, nutritionValue, nutritionType}) => {
+const cardNutrition = ({containerLogo, logo, nutritionValue, nutritionType}) => {
 
     return (
         <div className='cardNutrition'>
-            <div className='logoCardNutrition'>
-                <img src={logo} alt='logo' className='logo' />
+            <div className={`logoCardNutrition ${containerLogo}`}>
+                <img src={logo} alt={containerLogo} className="logo"/>
             </div>
             <div className='texteCardNutrition'>
                 <h3>{nutritionValue}</h3>

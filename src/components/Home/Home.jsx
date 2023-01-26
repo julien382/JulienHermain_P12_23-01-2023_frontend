@@ -54,10 +54,10 @@ const Home = () => {
         return (
             <div className='home'>
                 <Name name={user.userInfos.firstName} />
-                <CardNutrition logo={calories} nutritionValue={1} nutritionType={"Calories"} />
-                <CardNutrition logo={proteines} nutritionValue={2} nutritionType={"Proteines"}  />
-                <CardNutrition logo={glucides} nutritionValue={3} nutritionType={"Glucides"}  />
-                <CardNutrition logo={lipides} nutritionValue={4} nutritionType={"Lipides"}  />
+                <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={1} nutritionType={"Calories"} />
+                <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={2} nutritionType={"Proteines"}  />
+                <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={3} nutritionType={"Glucides"}  />
+                <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={4} nutritionType={"Lipides"}  />
                 {/*graph*/}
                 {/*component*/}{activity.userId}
 

@@ -7,7 +7,6 @@
 .logoCardNutrition{
     width: 60px;
     height: 60px;
-    background-color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,4 +26,24 @@
 .texteCardNutrition > p{
     color: #74798C;
     font-size: 14px;
+}
+
+.caloriesLogo{
+    background-color: #FF0000;
+    opacity: 10%;
+}
+
+.proteinesLogo{
+    background-color: #4AB8FF;
+    opacity: 10%;
+}
+
+.glucidesLogo{
+    background-color: #F9CE23;
+    opacity: 10%;
+}
+
+.lipidesLogo{
+    background-color: #FD5181;
+    opacity: 10%;
 }

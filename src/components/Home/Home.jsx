@@ -8,8 +8,9 @@ import { getSessions, getActivity, getUser, getPerformance } from '../../utils/f
 import { useNavigate, useParams } from 'react-router-dom';
 import Name from '../Name/Name';
 import Sessions from '../Sessions/Sessions'
-import CardNutrition from '../CardNutrition/CardNutrition';
 import Activity from '../Activity/Activity'
+import Performance from '../Performance/Performance'
+import CardNutrition from '../CardNutrition/CardNutrition';
 
 
 const Home = () => {
@@ -86,7 +87,7 @@ const Home = () => {
                 <Activity dataActivity={activity.sessions}/>
                 <div className='row'>
                   <Sessions dataSessions={sessions.sessions}/>
-                  {/*graph3*/}
+                  <Performance dataPerformance={performance.data}/>
                   {/*graph4*/}
                 </div>
 

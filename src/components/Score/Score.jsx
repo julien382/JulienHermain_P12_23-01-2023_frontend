@@ -13,6 +13,7 @@ const Score = ({dataScore}) => {
 
     return (
         <div className='score'>
+            <h4>Score</h4> 
             <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={dataScore}>
             <RadialBar
                 minAngle={15}

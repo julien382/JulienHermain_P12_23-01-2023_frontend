@@ -1,7 +1,11 @@
 .cardNutrition{
     display: flex;
-    margin-bottom: 103px;
+    width: 258px;
+    margin-bottom: 39px;
+    padding: 32px;
     align-items: center;
+    background-color: #FBFBFB;
+    border-radius: 5px;
 }
 
 .logoCardNutrition{

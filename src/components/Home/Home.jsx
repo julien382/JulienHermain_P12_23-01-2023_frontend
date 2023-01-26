@@ -4,6 +4,12 @@ import { getUser } from '../../utils/fetch.js';
 import { getActivity } from '../../utils/fetch.js';
 import { useNavigate, useParams } from 'react-router-dom';
 import Name from '../Name/Name';
+import CardNutrition from '../CardNutrition/CardNutrition';
+
+import calories from "../../assets/calories.svg"
+import proteines from "../../assets/proteines.svg"
+import glucides from "../../assets/glucides.svg"
+import lipides from "../../assets/lipides.svg"
 
 const Home = () => {
 
@@ -48,7 +54,10 @@ const Home = () => {
         return (
             <div className='home'>
                 <Name name={user.userInfos.firstName} />
-                
+                <CardNutrition logo={calories} nutritionValue={1} nutritionType={"Calories"} />
+                <CardNutrition logo={proteines} nutritionValue={2} nutritionType={"Proteines"}  />
+                <CardNutrition logo={glucides} nutritionValue={3} nutritionType={"Glucides"}  />
+                <CardNutrition logo={lipides} nutritionValue={4} nutritionType={"Lipides"}  />
                 {/*graph*/}
                 {/*component*/}{activity.userId}
 

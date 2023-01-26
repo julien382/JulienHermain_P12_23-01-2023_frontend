@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Name from '../Name/Name';
 import Sessions from '../Sessions/Sessions'
 import CardNutrition from '../CardNutrition/CardNutrition';
+import Activity from '../Activity/Activity'
 
 
 const Home = () => {
@@ -79,23 +80,25 @@ const Home = () => {
     if (userMainData && activity && sessions && performance) {
         return (
             <div className='home'>
-                <Name name={userMainData.userInfos.firstName} />
+              <Name name={userMainData.userInfos.firstName} />
+              <div className='row'>
+                <div>
+                <Activity dataActivity={activity.sessions}/>
                 <div className='row'>
-                  {/*graph1*/}
-                  <div className='row'>
-                    <Sessions dataSessions={sessions.sessions}/>
-                    {/*graph3*/}
-                    {/*graph4*/}
-                  </div>
-                  <div>
-                    <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={userMainData.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
-                    <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={userMainData.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
-                    <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={userMainData.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
-                    <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={userMainData.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
-                  </div>
-                  
+                  <Sessions dataSessions={sessions.sessions}/>
+                  {/*graph3*/}
+                  {/*graph4*/}
                 </div>
-                {/*component{activity.userId}*/}
+
+                </div>
+                <div>
+                  <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={userMainData.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
+                  <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={userMainData.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
+                  <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={userMainData.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
+                  <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={userMainData.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
+                </div>
+                
+              </div>
 
             </div>
         )

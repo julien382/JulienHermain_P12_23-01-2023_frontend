@@ -1,0 +1,18 @@
+.activity{
+    position: relative;
+    width: 835px;
+    height: 320px;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.activity > h4{
+    position: absolute;
+    color: white;
+    opacity: 0.5;
+    top: 29px;
+    left: 34px;
+    width: 145px;
+    font-size: 15px;
+}

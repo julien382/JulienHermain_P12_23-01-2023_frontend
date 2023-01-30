@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'rech
 
 const Activity = ({dataActivity}) => {
     const data = dataActivity.map((item) => {
-        return item
+        return { ...item, day: item.day.split('')[9] }
     })
     console.log(data);
 
@@ -12,24 +12,40 @@ const Activity = ({dataActivity}) => {
         <div className='activity'>
             <h4>Activité quotidienne</h4> 
             <BarChart
-                width={500}
-                height={300}
+                width={835}
+                height={320}
                 data={data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
-                <YAxis />
-                <Tooltip />
-                <Legend verticalAlign='top' align='right'/>
-                <Bar dataKey="kilogram" fill="#8884d8" />
-                <Bar dataKey="calories" fill="red" />
-            </BarChart>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis 
+                dataKey="day"
+                tick={{ fill: '#9B9EAC', fontSize: '14'}} 
+                tickLine={false}
+                tickSize={16}
+            />
+            <YAxis 
+                stroke="#9B9EAC"
+                orientation="right"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fill: '#9B9EAC', fontSize: '14'}}
+            />
+            <Tooltip
+                offset={21}
+                itemStyle={{
+                color: 'white',
+                fontSize: 10,
+                }}
+                formatter={(value, unit) => [value, unit]}
+                labelStyle={{ display: 'none' }}
+                contentStyle={{
+                backgroundColor: '#E60000',
+                }}
+            />
+            <Legend verticalAlign='top' align='right'/>
+            <Bar barSize={7} radius={[10, 10, 0, 0]} unit="kg" name="Poids (kg)" dataKey="kilogram" fill="#282D30" />
+            <Bar barSize={7} radius={[10, 10, 0, 0]} unit="Kcal"  name="Calories brûlées (kCal)" dataKey="calories" fill="#E60000" />
+        </BarChart>
             
         </div>
     )

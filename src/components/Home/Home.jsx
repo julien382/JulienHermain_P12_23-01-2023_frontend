@@ -85,7 +85,7 @@ const Home = () => {
               <div className='row'>
                 <Sessions dataSessions={sessions.sessions}/>
                 <Performance dataPerformance={performance.data}/>
-                <Score name={userMainData.todayScore} />
+                <Score dataScore={userMainData.todayScore} />
               </div>
 
               </div>

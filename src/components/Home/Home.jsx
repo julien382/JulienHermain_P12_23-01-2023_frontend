@@ -80,15 +80,17 @@ const Home = () => {
           <div className='home'>
             <Name name={userMainData.userInfos.firstName} />
             <div className='row'>
+              {/* Graphs */}
               <div>
-              <Activity dataActivity={activities}/>
-              <div className='row'>
-                <Sessions dataSessions={sessions.sessions}/>
-                <Performance dataPerformance={performance.data}/>
-                <Score dataScore={userMainData.todayScore} />
-              </div>
+                <Activity dataActivity={activities}/>
+                <div className='row'>
+                  <Sessions dataSessions={sessions.sessions}/>
+                  <Performance dataPerformance={performance.data}/>
+                  <Score dataScore={userMainData.todayScore} />
+                </div>
 
               </div>
+              {/* Cards Nutrition */}
               <div>
                 <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={userMainData.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
                 <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={userMainData.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />

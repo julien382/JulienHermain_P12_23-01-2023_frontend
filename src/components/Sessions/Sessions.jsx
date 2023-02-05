@@ -18,28 +18,50 @@ const Sessions = ({dataSessions}) => {
                 height={263}
                 data={data}
             >
-            <CartesianGrid  vertical={false} horizontal={false} />
+            <CartesianGrid 
+                vertical={false} 
+                horizontal={false} 
+            />
             <XAxis 
                 dataKey="day"
-                tick={{ fill: 'white', opacity: '.7' }}
+                tick={{ fill: 'white', opacity: '.5' }}
                 tickLine={false}
-                tickMargin={5}
                 interval="preserveStartEnd"
-                axisLine={false}/>
+                axisLine={false}
+            />
             <YAxis 
-                hide={true} domain={['dataMin-20', 'dataMax+40']}/>
+                hide={true} 
+                domain={['dataMin-20', 'dataMax+40']}
+            />
             <Tooltip
                 offset={21}
                 itemStyle={{
-                fontSize: 10,
+                    color: 'black',
+                    fontSize: 10,
                 }}
                 formatter={(value, unit) => [ unit, value]}
                 labelStyle={{ display: 'none' }}
-                contentStyle={{
-                }}
+                cursor={{
+                    stroke: 'black',
+                    strokeOpacity: 0.1,
+                    strokeWidth: 60,
+                    height: 263,
+                  }}
             />
-            <Legend />
-            <Line type="monotone" name="min" dataKey="sessionLength" stroke="white" />
+            <Line 
+                type="natural" 
+                name="min" 
+                dataKey="sessionLength" 
+                stroke="white"
+                strokeWidth={2}
+                dot={false}
+                activeDot={{
+                    fill: 'white',
+                    strokeOpacity: '.3',
+                    strokeWidth: '7',
+                    r: 5,
+                  }}
+            />
             </LineChart>
             
         </div>

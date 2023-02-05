@@ -17,7 +17,7 @@ const Activity = ({dataActivity}) => {
                 data={data}
             >
             <CartesianGrid 
-                strokeDasharray="3 3" 
+                strokeDasharray="3" 
                 vertical={false}
             />
             <XAxis 

@@ -9,7 +9,6 @@
 
 .activity > h4{
     position: absolute;
-    top: 24px;
-    left: 32px;
     font-size: 15px;
+    font-weight: 700;
 }

@@ -16,12 +16,16 @@ const Activity = ({dataActivity}) => {
                 height={320}
                 data={data}
             >
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid 
+                strokeDasharray="3 3" 
+                vertical={false}
+            />
             <XAxis 
                 dataKey="day"
                 tick={{ fill: '#9B9EAC', fontSize: '14'}} 
                 tickLine={false}
                 tickSize={16}
+                stroke="#DEDEDE"
             />
             <YAxis 
                 stroke="#9B9EAC"
@@ -42,9 +46,29 @@ const Activity = ({dataActivity}) => {
                 backgroundColor: '#E60000',
                 }}
             />
-            <Legend verticalAlign='top' align='right'/>
-            <Bar barSize={7} radius={[10, 10, 0, 0]} unit="kg" name="Poids (kg)" dataKey="kilogram" fill="#282D30" />
-            <Bar barSize={7} radius={[10, 10, 0, 0]} unit="Kcal"  name="Calories brûlées (kCal)" dataKey="calories" fill="#E60000" />
+            <Legend 
+                verticalAlign='top' 
+                align='right'
+                iconType="circle"
+                iconSize={8}
+                height={70}
+            />
+            <Bar 
+                barSize={7} 
+                radius={[10, 10, 0, 0]} 
+                unit="kg" 
+                name="Poids (kg)" 
+                dataKey="kilogram" 
+                fill="#282D30" 
+            />
+            <Bar 
+                barSize={7} 
+                radius={[10, 10, 0, 0]} 
+                unit="Kcal"  
+                name="Calories brûlées (kCal)" 
+                dataKey="calories" 
+                fill="#E60000" 
+            />
         </BarChart>
             
         </div>

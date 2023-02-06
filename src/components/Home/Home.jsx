@@ -70,7 +70,7 @@ const Home = () => {
       
   }, [id])
 
-
+  
   if (userMainData && activities && sessions && performance) {
       return (
           <div className='home'>

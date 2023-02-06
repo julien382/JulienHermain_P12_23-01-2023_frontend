@@ -18,6 +18,10 @@
     border-radius: 6px;
 }
 
+.logo{
+    display: block;
+}
+
 .texteCardNutrition{
     margin-left: 24px;
 }
@@ -34,8 +38,7 @@
 }
 
 .caloriesLogo{
-    background-color: #FF0000;
-    opacity: 10%;
+    background-color: rgba(255, 0, 0, 0.1);
 }
 
 .proteinesLogo{

@@ -22,9 +22,10 @@ const Score = ({dataScore}) => {
       
     return (
         <div className='score'>
+            <h4>Score</h4> 
             <div className="label">
-                <h4>Score</h4> 
-                <p>{dataScore.todayScore * 100}%</p>
+                <h5>{dataScore.todayScore * 100}%</h5>
+                <p>de votre objectif</p>
             </div>
             <ResponsiveContainer width="100%" height="100%">
                 <RadialBarChart innerRadius="70%" outerRadius="80%" barSize={10} data={userData}>

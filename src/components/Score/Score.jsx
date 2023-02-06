@@ -16,9 +16,6 @@ const Score = ({dataScore}) => {
     }
 ]
 
-
-
-    console.log(dataScore)
       
     return (
         <div className='score'>
@@ -28,10 +25,9 @@ const Score = ({dataScore}) => {
                 <p>de votre objectif</p>
             </div>
             <ResponsiveContainer width="100%" height="100%">
-                <RadialBarChart innerRadius="70%" outerRadius="80%" barSize={10} data={userData}>
+                <RadialBarChart innerRadius="70%" outerRadius="70%" startAngle={90} barSize={10} data={userData}>
                     <RadialBar
-                    
-                        clockWise
+                        cornerRadius={5}
                         dataKey="value"
                     />
                     <h4 className=''>toto</h4>

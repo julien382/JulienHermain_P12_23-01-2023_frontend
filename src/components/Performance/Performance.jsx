@@ -2,15 +2,21 @@ import './Performance.css'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis} from 'recharts';
 
 
-const Performance = ({dataPerformance}) => {
-    const data = dataPerformance.map((item) => {
-        return item
-    })
+const Performance = ({dataPerformance, kindPerformance}) => {
 
+    console.log(dataPerformance)
+
+    const userData = dataPerformance.map(item => {
+        return {
+          subject: kindPerformance[item.kind],
+          value: item.value,
+        };
+      });
+      console.log(userData)
 
     return (
         <div className='performance'>
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={userData}>
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis />

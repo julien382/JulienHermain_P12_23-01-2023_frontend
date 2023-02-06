@@ -81,7 +81,7 @@ const Home = () => {
                 <Activity dataActivity={activities}/>
                 <div className='row'>
                   <Sessions dataSessions={sessions.sessions}/>
-                  <Performance dataPerformance={performance.data}/>
+                  <Performance dataPerformance={performance.data} kindPerformance={performance.kind}/>
                   <Score dataScore={userMainData} />
                 </div>
 

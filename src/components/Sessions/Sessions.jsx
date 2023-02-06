@@ -8,7 +8,6 @@ const Sessions = ({dataSessions}) => {
         return { ...item, day: weekdays[item.day - 1] }
     })
 
-    console.log(data);
 
     return (
         <div className='sessions'>

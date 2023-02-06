@@ -7,7 +7,6 @@ const Performance = ({dataPerformance}) => {
         return item
     })
 
-    console.log(data);
 
     return (
         <div className='performance'>

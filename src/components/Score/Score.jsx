@@ -11,8 +11,7 @@ const Score = ({dataScore}) => {
         lineHeight: '24px',
       };
 
-    console.log(dataScore)
-
+      
     return (
         <div className='score'>
             <h4>Score</h4> 

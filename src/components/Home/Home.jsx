@@ -32,7 +32,6 @@ const Home = () => {
       if (data === undefined) {
           navigate("/")
       }
-      console.log(data);
 
     }
     fetchData()
@@ -55,8 +54,6 @@ const Home = () => {
       const data = await getSessions(id)
       setSessions(data)
 
-      console.log(data);
-
     }
     fetchData()
       
@@ -68,14 +65,11 @@ const Home = () => {
       const data = await getPerformance(id)
       setPerformance(data)
 
-      console.log(data);
-
     }
     fetchData()
       
   }, [id])
 
-  console.log(userMainData)
 
   if (userMainData && activities && sessions && performance) {
       return (

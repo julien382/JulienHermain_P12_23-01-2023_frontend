@@ -6,7 +6,6 @@ const Activity = ({dataActivity}) => {
     const data = dataActivity.map((item) => {
         return { ...item, day: item.day.split('')[9] }
     })
-    console.log(data);
 
     return (
         <div className='activity'>

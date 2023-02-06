@@ -15,7 +15,6 @@ export const getUser = async (userId) => {
     try {
         const result = await fetch(`${server}:${port}/user/${userId}`)
         const data = await result.json()
-        console.log(data.data);
 
         /*const resultUser = new User({...data.data.userInfos})
         console.log(data.data.userInfos);
@@ -43,8 +42,6 @@ export const getActivity = async (userId) => {
         const resultActivity = data.data.sessions.map((activity) => {
             return new Activity({...activity})
         })
-        console.log(data.data);
-        console.log(resultActivity);
         return resultActivity
 
     } catch (error) {
@@ -61,7 +58,6 @@ export const getSessions = async (userId) => {
     try {
         const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
         const data = await result.json()
-        console.log(data.data);
 
         /*const resultSessions = data.data.sessions.map((sessions) => {
             return new Sessions({...sessions})
@@ -86,8 +82,6 @@ export const getPerformance = async (userId) => {
     try {
         const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
         const data = await result.json()
-
-        console.log(data.data);
 
         return data.data
     } catch (error) {

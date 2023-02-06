@@ -42,16 +42,13 @@
 }
 
 .proteinesLogo{
-    background-color: #4AB8FF;
-    opacity: 10%;
+    background-color: rgba(74, 184, 255, 0.1);
 }
 
 .glucidesLogo{
-    background-color: #F9CE23;
-    opacity: 10%;
+    background-color: rgba(249, 206, 35, 0.1);
 }
 
 .lipidesLogo{
-    background-color: #FD5181;
-    opacity: 10%;
+    background-color: rgba(253, 81, 129, 0.1);
 }

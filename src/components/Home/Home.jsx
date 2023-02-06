@@ -75,6 +75,8 @@ const Home = () => {
       
   }, [id])
 
+  console.log(userMainData)
+
   if (userMainData && activities && sessions && performance) {
       return (
           <div className='home'>
@@ -86,7 +88,7 @@ const Home = () => {
                 <div className='row'>
                   <Sessions dataSessions={sessions.sessions}/>
                   <Performance dataPerformance={performance.data}/>
-                  <Score dataScore={userMainData.todayScore} />
+                  <Score dataScore={userMainData} />
                 </div>
 
               </div>

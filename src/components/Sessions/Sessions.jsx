@@ -1,5 +1,5 @@
 import './Sessions.css'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
 
 
 const Sessions = ({dataSessions}) => {

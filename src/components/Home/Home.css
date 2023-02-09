@@ -1,4 +1,12 @@
 .home{
     padding-left: 107px;
     padding-top: 68px;
+    }
+
+@media only screen and (min-width: 1000px) and (max-width: 1700px)
+{
+    .home{
+        padding-left: 25px;
+        padding-top: 25px;
+    }
 }

@@ -1,9 +1,9 @@
 .cardNutrition{
     display: flex;
-    width: 258px;
+    width: 180px;
     margin-bottom: 39px;
-    margin-left: 21px;
     padding: 32px;
+    padding-right: 0;
     align-items: center;
     background-color: #FBFBFB;
     border-radius: 5px;

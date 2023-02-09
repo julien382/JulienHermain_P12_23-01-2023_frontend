@@ -3,6 +3,9 @@
     align-items: center;
     height: 91px;
     background-color: #020203;
-    padding-left: 29px;
     width: 100%;
+}
+
+.header img{
+    padding-left: 29px;
 }

@@ -14,7 +14,7 @@ const NavBar = () => {
                 <li>
                     <NavLink 
                         className={({ isActive }) => (isActive ? 'active' : '')} 
-                        to="/Error">Profil
+                        to="/Profil">Profil
                     </NavLink>
                 </li>
                 <li>

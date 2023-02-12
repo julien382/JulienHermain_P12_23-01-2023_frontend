@@ -41,12 +41,6 @@ const Sessions = ({dataSessions}) => {
                     }}
                     formatter={(value, unit) => [ unit, value]}
                     labelStyle={{ display: 'none' }}
-                    cursor={{
-                        stroke: 'black',
-                        strokeOpacity: 0.1,
-                        strokeWidth: 60,
-                        height: 263,
-                    }}
                 />
                 <Line 
                     type="natural" 

@@ -1,7 +1,7 @@
 .score{
     position: relative;
     width: 208px;
-    height: 243px;
+    height: 203px;
     border-radius: 5px;
     margin-left: 30px;
     background-color: #FBFBFB;
@@ -9,7 +9,7 @@
 
 .score > h4{
     position: absolute;
-    top: 24px;
+    top: 10px;
     left: 30px;
     font-size: 16px;
     font-weight: 700;

@@ -2,10 +2,10 @@ import './CardNutrition.css'
 
 const cardNutrition = ({containerLogo, logo, nutritionValue, nutritionType}) => {
 
-// split les chiffres et les lettres
+// split numbers and letters
 const [formattedNumber, unit] = nutritionValue.match(/^(\d+)(.*)$/).slice(1);
 
-// mettre une virgule
+// add ,
 const formattedValue = formattedNumber.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 
 // add unit

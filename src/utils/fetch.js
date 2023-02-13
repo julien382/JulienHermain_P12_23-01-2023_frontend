@@ -6,28 +6,28 @@ import Performance from "../type/Performance.js"*/
 const server = "http://localhost"
 const port = "3000"
 
-const isDev = process.env.NODE_ENV === 'development'
+//const isDev = process.env.NODE_ENV === 'development'
 
 
 /**
  * @param {number} userId 
- * @returns {(Promise<User[]>| null)}
+ * @returns {(Promise<UserTypes[]>| null)}
  */
 export const getUser = async (userId) => {
     let data;
 
     try {
 
-        if (isDev) {
+       /* if (isDev) {
             // JSON
             // data qui a la clé id = userId
             // et le metre dans :
             // data = .......
 
-        } else {
+        } else {*/
             const result = await fetch(`${server}:${port}/user/${userId}`)
             data = await result.json()
-        }
+        /*}*/
         return data.data
 
     } catch (error) {
@@ -81,12 +81,13 @@ export const getSessions = async (userId) => {
 
 /**
  * @param {number} userId 
- * @returns {(Performance[]| null)}
+ * @returns {(PerformanceTypes[]| null)}
  */
 export const getPerformance = async (userId) => {
     try {
         const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
         const data = await result.json()
+        
 
         return data.data
     } catch (error) {

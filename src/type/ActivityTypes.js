@@ -1,4 +1,4 @@
-class Activity {
+class ActivityTypes {
 	day
 	kilogram
 	calories
@@ -10,4 +10,4 @@ class Activity {
 	}
 }
 
-export default Activity
+export default ActivityTypes

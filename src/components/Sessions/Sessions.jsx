@@ -1,6 +1,7 @@
 import './Sessions.css'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
-
+import SessionsTypes from '../../type/SessionsTypes';
+import PropTypes from 'prop-types'
 
 const Sessions = ({dataSessions}) => {
     const weekdays = ['L ', 'M ', 'M ', 'J ', 'V ', 'S ', 'D ']
@@ -44,7 +45,7 @@ const Sessions = ({dataSessions}) => {
                     cursor={{
                         stroke: 'black',
                         strokeOpacity: 0.1,
-                        strokeWidth: 25,
+                        strokeWidth: 25
                     }}
                 />
                 <Line 
@@ -66,6 +67,11 @@ const Sessions = ({dataSessions}) => {
             
         </div>
     )
+}
+
+
+Sessions.propTypes = {
+    dataSessions: PropTypes.arrayOf(PropTypes.instanceOf(SessionsTypes))
 }
 
 export default Sessions

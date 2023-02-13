@@ -1,6 +1,10 @@
 import './CardNutrition.css'
+import PropTypes from 'prop-types'
+
 
 const cardNutrition = ({containerLogo, logo, nutritionValue, nutritionType}) => {
+
+    console.log(nutritionValue)
 
 // split numbers and letters
 const [formattedNumber, unit] = nutritionValue.match(/^(\d+)(.*)$/).slice(1);
@@ -24,6 +28,13 @@ const goodValueNutrition = formattedValue + unit;
             
         </div>
     )
+}
+
+cardNutrition.propTypes = {
+    containerLogo: PropTypes.string,
+    logo: PropTypes.string,
+    nutritionValue: PropTypes.string,
+    nutritionType: PropTypes.string
 }
 
 export default cardNutrition

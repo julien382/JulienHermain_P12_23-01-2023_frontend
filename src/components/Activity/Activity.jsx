@@ -1,5 +1,7 @@
 import './Activity.css'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
+import PropTypes from 'prop-types'
+import ActivityTypes from '../../type/ActivityTypes';
 
 
 const Activity = ({dataActivity}) => {
@@ -72,6 +74,10 @@ const Activity = ({dataActivity}) => {
             
         </div>
     )
+}
+
+Activity.propTypes = {
+    dataActivity: PropTypes.arrayOf(PropTypes.instanceOf(ActivityTypes)),
 }
 
 export default Activity

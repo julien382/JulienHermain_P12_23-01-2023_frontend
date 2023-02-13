@@ -17,7 +17,6 @@ import Score from '../Score/Score'
 const Home = () => {
   
   const navigate = useNavigate();
-  
   const [userMainData, setUserMainData] = useState(null)
   const [activities, setActivities] = useState(null)
   const [sessions, setSessions] = useState(null)
@@ -80,7 +79,7 @@ const Home = () => {
               <div>
                 <Activity dataActivity={activities}/>
                 <div className='row'>
-                  <Sessions dataSessions={sessions.sessions}/>
+                  <Sessions dataSessions={sessions}/>
                   <Performance dataPerformance={performance.data} kindPerformance={performance.kind}/>
                   <Score dataScore={userMainData} />
                 </div>

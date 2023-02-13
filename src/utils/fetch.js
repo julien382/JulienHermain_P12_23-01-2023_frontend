@@ -1,10 +1,12 @@
-import Activity from "../type/Activity.js"
-/*import Sessions from "../type/Sessions.js"
-import User from "../type/User.js"
+import ActivityTypes from "../type/ActivityTypes.js"
+import SessionsTypes from "../type/SessionsTypes.js"
+/*import User from "../type/User.js"
 import Performance from "../type/Performance.js"*/
 
 const server = "http://localhost"
 const port = "3000"
+
+const isDev = process.env.NODE_ENV === 'development'
 
 
 /**
@@ -12,15 +14,20 @@ const port = "3000"
  * @returns {(Promise<User[]>| null)}
  */
 export const getUser = async (userId) => {
+    let data;
+
     try {
-        const result = await fetch(`${server}:${port}/user/${userId}`)
-        const data = await result.json()
 
-        /*const resultUser = new User({...data.data.userInfos})
-        console.log(data.data.userInfos);
-        console.log(resultUser);
-        return resultUser*/
+        if (isDev) {
+            // JSON
+            // data qui a la clé id = userId
+            // et le metre dans :
+            // data = .......
 
+        } else {
+            const result = await fetch(`${server}:${port}/user/${userId}`)
+            data = await result.json()
+        }
         return data.data
 
     } catch (error) {
@@ -32,7 +39,7 @@ export const getUser = async (userId) => {
 
 /**
  * @param {number} userId 
- * @returns {(Promise<Activity[]>| null)}
+ * @returns {(Promise<ActivityTypes[]>| null)}
  */
 export const getActivity = async (userId) => {
     try {
@@ -40,7 +47,7 @@ export const getActivity = async (userId) => {
         const data = await result.json()
 
         const resultActivity = data.data.sessions.map((activity) => {
-            return new Activity({...activity})
+            return new ActivityTypes({...activity})
         })
         return resultActivity
 
@@ -52,20 +59,18 @@ export const getActivity = async (userId) => {
 
 /**
  * @param {number} userId 
- * @returns {(Promise<Sessions[]>| null)}
+ * @returns {(Promise<SessionsTypes[]>| null)}
  */
 export const getSessions = async (userId) => {
     try {
         const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
         const data = await result.json()
 
-        /*const resultSessions = data.data.sessions.map((sessions) => {
-            return new Sessions({...sessions})
+        const resultSessions = data.data.sessions.map((sessions) => {
+            console.log(sessions)
+            return new SessionsTypes({...sessions})
         })
-
-        return resultSessions*/
-
-        return data.data
+        return resultSessions
 
     } catch (error) {
         console.log(error);

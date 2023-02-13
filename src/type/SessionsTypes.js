@@ -1,4 +1,4 @@
-class Sessions {
+class SessionsTypes {
 	day
 	sessionLength
 
@@ -8,4 +8,4 @@ class Sessions {
 	}
 }
 
-export default Sessions
+export default SessionsTypes

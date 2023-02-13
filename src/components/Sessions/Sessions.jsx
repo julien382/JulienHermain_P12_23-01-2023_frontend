@@ -45,7 +45,6 @@ const Sessions = ({dataSessions}) => {
                         stroke: 'black',
                         strokeOpacity: 0.1,
                         strokeWidth: 25,
-                        height: 500,
                     }}
                 />
                 <Line 

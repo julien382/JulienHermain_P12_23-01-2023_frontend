@@ -47,6 +47,7 @@ export const getActivity = async (userId) => {
         const data = await result.json()
 
         const resultActivity = data.data.sessions.map((activity) => {
+
             return new ActivityTypes({...activity})
         })
         return resultActivity
@@ -67,7 +68,6 @@ export const getSessions = async (userId) => {
         const data = await result.json()
 
         const resultSessions = data.data.sessions.map((sessions) => {
-            console.log(sessions)
             return new SessionsTypes({...sessions})
         })
         return resultSessions

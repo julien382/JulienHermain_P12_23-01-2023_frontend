@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 const cardNutrition = ({containerLogo, logo, nutritionValue, nutritionType}) => {
 
-    console.log(nutritionValue)
 
 // split numbers and letters
 const [formattedNumber, unit] = nutritionValue.match(/^(\d+)(.*)$/).slice(1);

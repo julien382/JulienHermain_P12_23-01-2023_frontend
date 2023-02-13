@@ -39,7 +39,7 @@ const Sessions = ({dataSessions}) => {
                         color: 'black',
                         fontSize: 10,
                     }}
-                    formatter={(value, unit) => [ unit, value]}
+                    formatter={(value, unit) => [ value + " " + unit]}
                     labelStyle={{ display: 'none' }}
                     cursor={{
                         stroke: 'black',

@@ -12,3 +12,7 @@
     font-size: 15px;
     font-weight: 700;
 }
+
+.recharts-legend-item-text{
+    color: black !important;
+}

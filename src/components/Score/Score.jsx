@@ -1,11 +1,9 @@
 import './Score.css'
 import { RadialBarChart, RadialBar, ResponsiveContainer} from 'recharts';
-import UserTypes from '../../type/UserTypes';
 import PropTypes from 'prop-types'
 
 
 const Score = ({dataScore}) => {
-
     const userData = [{
         name: "Score",
         value: dataScore.todayScore,
@@ -41,7 +39,7 @@ const Score = ({dataScore}) => {
 }
 
 Score.propTypes = {
-    dataScore: PropTypes.arrayOf(PropTypes.instanceOf(UserTypes))
+    dataScore: PropTypes.object
 }
 
 export default Score

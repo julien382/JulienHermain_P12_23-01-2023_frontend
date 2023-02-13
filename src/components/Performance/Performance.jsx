@@ -1,6 +1,5 @@
 import './Performance.css'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer} from 'recharts';
-import PerformanceTypes from '../../type/PerformanceTypes';
 import PropTypes from 'prop-types'
 
 
@@ -40,7 +39,8 @@ const Performance = ({dataPerformance, kindPerformance}) => {
 }
 
 Performance.propTypes = {
-  dataPerformance: PropTypes.arrayOf(PropTypes.instanceOf(PerformanceTypes))
+  dataPerformance: PropTypes.arrayOf(PropTypes.object),
+  kindPerformance: PropTypes.object
 }
 
 

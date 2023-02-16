@@ -42,7 +42,6 @@ export const getUser = async (userId) => {
     } catch (error) {
         console.log(error);
     }
-
 }
 
 
@@ -83,7 +82,6 @@ export const getSessions = async (userId) => {
     } catch (error) {
         console.log(error);
     }
-
 }
 
 
@@ -101,5 +99,4 @@ export const getPerformance = async (userId) => {
     } catch (error) {
         console.log(error);
     }
-
 }

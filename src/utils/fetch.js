@@ -1,7 +1,7 @@
 import ActivityTypes from "../type/ActivityTypes.js"
 import SessionsTypes from "../type/SessionsTypes.js"
 
-import { USER_MAIN_DATA } from "../data/mocked.js"
+import { USER_ACTIVITY, USER_MAIN_DATA } from "../data/mocked.js"
 /*import User from "../type/User.js"
 import Performance from "../type/Performance.js"*/
 
@@ -51,13 +51,34 @@ export const getUser = async (userId) => {
  */
 export const getActivity = async (userId) => {
     try {
-        const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
-        const data = await result.json()
 
-        const resultActivity = data.data.sessions.map((activity) => {
-            return new ActivityTypes({...activity})
-        })
-        return resultActivity
+        if (isDev) {
+            // JSON
+            // data qui a la clé id = userId
+            // et le metre dans :
+            // data = .......
+            return USER_ACTIVITY.find(user => {
+                if(user.userId == userId){
+                    const resultActivity = user.sessions.map((activity) => {
+                        return new ActivityTypes({...activity})
+                    })
+                    console.log(resultActivity);
+                    return resultActivity
+                }return null
+            })
+                        
+            
+        } else {
+            const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
+            const data = await result.json()
+    
+            const resultActivity = data.data.sessions.map((activity) => {
+                return new ActivityTypes({...activity})
+            })
+            return resultActivity
+            
+        }
+
 
     } catch (error) {
         console.log(error);
@@ -71,12 +92,15 @@ export const getActivity = async (userId) => {
  */
 export const getSessions = async (userId) => {
     try {
+
+
         const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
         const data = await result.json()
 
         const resultSessions = data.data.sessions.map((sessions) => {
             return new SessionsTypes({...sessions})
         })
+        console.log(resultSessions);
         return resultSessions
 
     } catch (error) {
@@ -91,6 +115,8 @@ export const getSessions = async (userId) => {
  */
 export const getPerformance = async (userId) => {
     try {
+
+
         const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
         const data = await result.json()
         

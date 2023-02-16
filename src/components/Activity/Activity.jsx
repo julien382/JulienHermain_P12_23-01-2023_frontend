@@ -5,6 +5,7 @@ import ActivityTypes from '../../type/ActivityTypes';
 
 
 const Activity = ({dataActivity}) => {
+    console.log(dataActivity);
     const data = dataActivity.map((item) => {
         return { ...item, day: item.day.split('')[9] }
     })

@@ -9,14 +9,12 @@ const server = "http://localhost"
 const port = "3000"
 
 const isDev = process.env.NODE_ENV === 'development'
-console.log(isDev);
 
 /**
  * @param {number} userId 
  * @returns {(Promise<UserTypes[]>| null)}
  */
 export const getUser = async (userId) => {
-    console.log(userId);
     let data;
 
     try {
@@ -57,7 +55,6 @@ export const getActivity = async (userId) => {
         const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
         const data = await result.json()
 
-        console.log(data.data.sessions);
         const resultActivity = data.data.sessions.map((activity) => {
             return new ActivityTypes({...activity})
         })

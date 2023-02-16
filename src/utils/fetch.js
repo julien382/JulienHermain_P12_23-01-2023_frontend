@@ -1,34 +1,45 @@
 import ActivityTypes from "../type/ActivityTypes.js"
 import SessionsTypes from "../type/SessionsTypes.js"
+
+import { USER_MAIN_DATA } from "../data/mocked.js"
 /*import User from "../type/User.js"
 import Performance from "../type/Performance.js"*/
 
 const server = "http://localhost"
 const port = "3000"
 
-//const isDev = process.env.NODE_ENV === 'development'
-
+const isDev = process.env.NODE_ENV === 'development'
+console.log(isDev);
 
 /**
  * @param {number} userId 
  * @returns {(Promise<UserTypes[]>| null)}
  */
 export const getUser = async (userId) => {
+    console.log(userId);
     let data;
 
     try {
 
-       /* if (isDev) {
+        if (isDev) {
             // JSON
             // data qui a la clé id = userId
             // et le metre dans :
             // data = .......
+            return USER_MAIN_DATA.find(user => {
+                if(user.id == userId){
+                    return user.userInfos
+                }return null
 
-        } else {*/
+            })
+                        
+            
+        } else {
             const result = await fetch(`${server}:${port}/user/${userId}`)
             data = await result.json()
-        /*}*/
-        return data.data
+
+        }
+        return data.data.userInfos
 
     } catch (error) {
         console.log(error);
@@ -46,8 +57,8 @@ export const getActivity = async (userId) => {
         const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
         const data = await result.json()
 
+        console.log(data.data.sessions);
         const resultActivity = data.data.sessions.map((activity) => {
-
             return new ActivityTypes({...activity})
         })
         return resultActivity

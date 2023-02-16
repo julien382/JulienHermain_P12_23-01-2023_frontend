@@ -1,4 +1,4 @@
-const USER_MAIN_DATA = [
+export const USER_MAIN_DATA = [
     {
         id: 12,
         userInfos: {
@@ -261,12 +261,3 @@ const USER_PERFORMANCE = [
         ]
     }
 ]
-
-
-
-module.exports = {
-    USER_MAIN_DATA,
-    USER_ACTIVITY,
-    USER_AVERAGE_SESSIONS,
-    USER_PERFORMANCE
-}

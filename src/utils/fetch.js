@@ -20,17 +20,11 @@ export const getUser = async (userId) => {
     try {
 
         if (isDev) {
-            // JSON
-            // data qui a la clé id = userId
-            // et le metre dans :
-            // data = .......
             return USER_MAIN_DATA.find(user => {
                 if(user.id == userId){
                     return user.userInfos
                 }return null
-
-            })
-                        
+            })        
             
         } else {
             const result = await fetch(`${server}:${port}/user/${userId}`)
@@ -53,10 +47,6 @@ export const getActivity = async (userId) => {
     try {
 
         if (isDev) {
-            // JSON
-            // data qui a la clé id = userId
-            // et le metre dans :
-            // data = .......
             return USER_ACTIVITY.find(user => {
                 if(user.userId == userId){
                     const resultActivity = user.sessions.map((activity) => {
@@ -65,8 +55,7 @@ export const getActivity = async (userId) => {
                     console.log(resultActivity);
                     return resultActivity
                 }return null
-            })
-                        
+            })          
             
         } else {
             const result = await fetch(`${server}:${port}/user/${userId}/activity/`)

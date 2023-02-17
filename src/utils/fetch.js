@@ -46,7 +46,7 @@ export const getUser = async (userId) => {
 export const getActivity = async (userId) => {
     try {
 
-        if (isDev) {
+        /*if (isDev) {
             return USER_ACTIVITY.find(user => {
                 if(user.userId == userId){
                     const resultActivity = user.sessions.map((activity) => {
@@ -57,7 +57,7 @@ export const getActivity = async (userId) => {
                 }return null
             })          
             
-        } else {
+        } else {*/
             const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
             const data = await result.json()
     
@@ -66,7 +66,7 @@ export const getActivity = async (userId) => {
             })
             return resultActivity
             
-        }
+        /*}*/
 
 
     } catch (error) {

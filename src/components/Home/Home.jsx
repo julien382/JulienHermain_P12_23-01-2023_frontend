@@ -40,6 +40,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getActivity(id)
+      console.log(data);
       setActivities(data)
     }
     fetchData()

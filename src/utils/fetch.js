@@ -19,12 +19,14 @@ export const getUser = async (userId) => {
 
         if (isDev) {
             const data = USER_MAIN_DATA.find((user) => user.id.toString() === userId); 
+
             const userMain = new UserTypes(data);
             return userMain; 
             
         } else {
             const result = await fetch(`${server}:${port}/user/${userId}`)
             const data = await result.json()
+
             const userMain = new UserTypes(data.data);
             return userMain;
 
@@ -43,7 +45,23 @@ export const getUser = async (userId) => {
 export const getActivity = async (userId) => {
     try {
 
-        /*if (isDev) {
+        if (isDev) {
+            const data = USER_ACTIVITY.find((user) => user.userId.toString() === userId); 
+
+            const userActivity = new ActivityTypes(data);
+            console.log(userActivity);
+            return userActivity; 
+            
+        } /*else {
+            const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
+            const data = await result.json()
+
+            const userActivity = new ActivityTypes(data.data);
+            return userActivity;
+
+        }*/
+/*
+        if (isDev) {
             return USER_ACTIVITY.find(user => {
                 if(user.userId == userId){
                     const resultActivity = user.sessions.map((activity) => {
@@ -54,7 +72,7 @@ export const getActivity = async (userId) => {
                 }return null
             })          
             
-        } else {*/
+        } else {
             const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
             const data = await result.json()
     
@@ -63,7 +81,7 @@ export const getActivity = async (userId) => {
             })
             return resultActivity
             
-        /*}*/
+        }*/
 
 
     } catch (error) {

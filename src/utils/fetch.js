@@ -20,25 +20,15 @@ export const getUser = async (userId) => {
         if (isDev) {
             const data = USER_MAIN_DATA.find((user) => user.id.toString() === userId); 
             const userMain = new UserTypes(data);
-            console.log(userMain);
-            return userMain;
-
-            return USER_MAIN_DATA.find(user => {
-                if(user.id == userId){
-                    const resultUser = new UserTypes(user)
-                    return resultUser
-                }return null
-            })   
+            return userMain; 
             
-        } /*else {
+        } else {
             const result = await fetch(`${server}:${port}/user/${userId}`)
             const data = await result.json()
-            console.log(data);
-            const resultUser = new UserTypes({...data.data.userInfos})
-            console.log(resultUser);
-            return resultUser
+            const userMain = new UserTypes(data.data);
+            return userMain;
 
-        }*/
+        }
 
     } catch (error) {
         console.log(error);

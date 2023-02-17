@@ -49,17 +49,16 @@ export const getActivity = async (userId) => {
             const data = USER_ACTIVITY.find((user) => user.userId.toString() === userId); 
 
             const userActivity = new ActivityTypes(data);
-            console.log(userActivity);
             return userActivity; 
             
-        } /*else {
+        } else {
             const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
             const data = await result.json()
 
             const userActivity = new ActivityTypes(data.data);
             return userActivity;
 
-        }*/
+        }
 /*
         if (isDev) {
             return USER_ACTIVITY.find(user => {

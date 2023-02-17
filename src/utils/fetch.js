@@ -1,9 +1,7 @@
 import ActivityTypes from "../type/ActivityTypes.js"
 import SessionsTypes from "../type/SessionsTypes.js"
 
-import { USER_ACTIVITY, USER_MAIN_DATA } from "../data/mocked.js"
-/*import User from "../type/User.js"
-import Performance from "../type/Performance.js"*/
+import { USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_MAIN_DATA } from "../data/mocked.js"
 
 const server = "http://localhost"
 const port = "3000"
@@ -82,15 +80,28 @@ export const getActivity = async (userId) => {
 export const getSessions = async (userId) => {
     try {
 
+        if (isDev) {
+            return USER_AVERAGE_SESSIONS.find(user => {
+                if(user.userId == userId){
+                    const resultSessions = user.sessions.map((sessions) => {
+                        return new SessionsTypes({...sessions})
+                    })
+                    console.log(resultSessions);
+                    return resultSessions
+                }return null
+            })          
+            
+        } else {
 
-        const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
-        const data = await result.json()
+            const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
+            const data = await result.json()
 
-        const resultSessions = data.data.sessions.map((sessions) => {
-            return new SessionsTypes({...sessions})
-        })
-        console.log(resultSessions);
-        return resultSessions
+            const resultSessions = data.data.sessions.map((sessions) => {
+                return new SessionsTypes({...sessions})
+            })
+            console.log(resultSessions);
+            return resultSessions
+        }
 
     } catch (error) {
         console.log(error);

@@ -3,7 +3,7 @@ import ActivityTypes from "../type/ActivityTypes.js"
 import SessionsTypes from "../type/SessionsTypes.js"
 import PerformanceTypes from "../type/PerformanceTypes.js"
 
-import { USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_MAIN_DATA } from "../data/mocked.js"
+import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../data/mocked.js"
 
 const server = "http://localhost"
 const port = "3000"
@@ -77,7 +77,8 @@ export const getSessions = async (userId) => {
             const data = USER_AVERAGE_SESSIONS.find((user) => user.userId.toString() === userId); 
 
             const userSessions = new SessionsTypes(data);
-            return userSessions            
+            return userSessions   
+
         } else {
             const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
             const data = await result.json()
@@ -86,7 +87,6 @@ export const getSessions = async (userId) => {
             return userSessions;
 
         }
-
 
     } catch (error) {
         console.log(error);
@@ -101,17 +101,20 @@ export const getSessions = async (userId) => {
 export const getPerformance = async (userId) => {
     try {
 
+        if (isDev) {
+            const data = USER_PERFORMANCE.find((user) => user.userId.toString() === userId); 
 
-        const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
-        const data = await result.json()
+            const userPerformance = new PerformanceTypes(data);
+            return userPerformance  
+                      
+        } else {
+            const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
+            const data = await result.json()
 
-       /* const resultPerformance = data.data.data.map((performance) => {
-            return new PerformanceTypes({...performance})
-            
-        })
-        console.log(resultPerformance);
-        return resultPerformance*/
-        return data.data
+            const userPerformance = new PerformanceTypes(data.data);
+            return userPerformance;
+
+        }
 
     } catch (error) {
         console.log(error);

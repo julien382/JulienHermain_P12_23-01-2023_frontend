@@ -1,10 +1,8 @@
 class Performance {
-	value
-	kind
 
-	constructor({_value, _kind}) {
-		this.value = _value
-		this.kind = _kind
+	constructor(data) {
+		this.data = data.data;
+    	this.kind = data.kind;
 	}
 }
 

@@ -85,12 +85,12 @@ const Home = () => {
 
               </div>
               {/* Cards Nutrition */}
-             {/* <div>
-                <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={userMainData.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
-                <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={userMainData.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
-                <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={userMainData.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
-                <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={userMainData.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
-              </div>*/}
+             { <div>
+                <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={userMainData.calorie + "kCal"} nutritionType={"Calories"} />
+                <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={userMainData.proteine + "g"} nutritionType={"Proteines"}  />
+                <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={userMainData.glucide + "g"} nutritionType={"Glucides"}  />
+                <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={userMainData.lipide + "g"} nutritionType={"Lipides"}  />
+              </div>}
               
             </div>
 

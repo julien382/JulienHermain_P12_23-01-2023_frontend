@@ -75,7 +75,7 @@ const Home = () => {
             <div className='row'>
               {/* Graphs */}
               <div>
-                <Activity dataActivity={activities}/>
+                <Activity dataActivity={activities.sessions}/>
                 <div className='row'>
                   <Sessions dataSessions={sessions}/>
                   <Performance dataPerformance={performance.data} kindPerformance={performance.kind}/>

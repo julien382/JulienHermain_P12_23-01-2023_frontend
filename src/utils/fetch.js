@@ -18,17 +18,19 @@ export const getUser = async (userId) => {
     try {
 
         if (isDev) {
+            const data = USER_MAIN_DATA.find((user) => user.id.toString() === userId); 
+            const userMain = new UserTypes(data);
+            console.log(userMain);
+            return userMain;
+
             return USER_MAIN_DATA.find(user => {
                 if(user.id == userId){
-                    console.log(USER_MAIN_DATA);
-                    console.log(user);
-                    const resultUser = new UserTypes({...user.userInfos})
-                    console.log(resultUser);
+                    const resultUser = new UserTypes(user)
                     return resultUser
                 }return null
             })   
             
-        } else {
+        } /*else {
             const result = await fetch(`${server}:${port}/user/${userId}`)
             const data = await result.json()
             console.log(data);
@@ -36,7 +38,7 @@ export const getUser = async (userId) => {
             console.log(resultUser);
             return resultUser
 
-        }
+        }*/
 
     } catch (error) {
         console.log(error);

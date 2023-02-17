@@ -72,7 +72,7 @@ const Home = () => {
   if (userMainData && activities && sessions && performance) {
       return (
           <div className='home'>
-            <Name name={userMainData.userInfos} />
+            <Name name={userMainData} />
             <div className='row'>
               {/* Graphs */}
               <div>

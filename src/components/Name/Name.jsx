@@ -1,7 +1,6 @@
 import './Name.css'
 
 const Name = ({name}) => {
-    console.log(name);
 
     return (
         <div className='name'>

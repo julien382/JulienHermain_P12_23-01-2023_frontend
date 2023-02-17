@@ -26,8 +26,6 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getUser(id)
-      console.log(getUser(id));
-      console.log(data);
       setUserMainData(data)
       // redirect error
       if (data === undefined) {

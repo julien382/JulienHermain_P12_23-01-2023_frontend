@@ -94,11 +94,9 @@ export const getSessions = async (userId) => {
 
             const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
             const data = await result.json()
-            console.log(data);
             const resultSessions = data.data.sessions.map((sessions) => {
                 return new SessionsTypes({...sessions})
             })
-            console.log(resultSessions);
             return resultSessions
        /* }*/
 
@@ -118,7 +116,6 @@ export const getPerformance = async (userId) => {
 
         const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
         const data = await result.json()
-        console.log(data);
 
        /* const resultPerformance = data.data.data.map((performance) => {
             return new PerformanceTypes({...performance})

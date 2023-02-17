@@ -26,6 +26,8 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getUser(id)
+      console.log(getUser(id));
+      console.log(data);
       setUserMainData(data)
       // redirect error
       if (data === undefined) {
@@ -41,7 +43,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getActivity(id)
-      console.log(getActivity);
+      console.log(data);
       setActivities(data)
     }
     fetchData()
@@ -74,7 +76,7 @@ const Home = () => {
   if (userMainData && activities && sessions && performance) {
       return (
           <div className='home'>
-            <Name name={userMainData.userInfos.firstName} />
+            <Name name={userMainData.userInfos} />
             <div className='row'>
               {/* Graphs */}
               <div>
@@ -87,12 +89,12 @@ const Home = () => {
 
               </div>
               {/* Cards Nutrition */}
-              <div>
+             {/* <div>
                 <CardNutrition containerLogo={"caloriesLogo"} logo={calories} nutritionValue={userMainData.keyData.calorieCount + "kCal"} nutritionType={"Calories"} />
                 <CardNutrition containerLogo={"proteinesLogo"} logo={proteines} nutritionValue={userMainData.keyData.proteinCount + "g"} nutritionType={"Proteines"}  />
                 <CardNutrition containerLogo={"glucidesLogo"} logo={glucides} nutritionValue={userMainData.keyData.carbohydrateCount + "g"} nutritionType={"Glucides"}  />
                 <CardNutrition containerLogo={"lipidesLogo"} logo={lipides} nutritionValue={userMainData.keyData.lipidCount + "g"} nutritionType={"Lipides"}  />
-              </div>
+              </div>*/}
               
             </div>
 

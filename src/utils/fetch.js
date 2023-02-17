@@ -1,5 +1,7 @@
+import UserTypes from "../type/UserTypes.js"
 import ActivityTypes from "../type/ActivityTypes.js"
 import SessionsTypes from "../type/SessionsTypes.js"
+import PerformanceTypes from "../type/PerformanceTypes.js"
 
 import { USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_MAIN_DATA } from "../data/mocked.js"
 
@@ -13,23 +15,28 @@ const isDev = process.env.NODE_ENV === 'development'
  * @returns {(Promise<UserTypes[]>| null)}
  */
 export const getUser = async (userId) => {
-    let data;
-
     try {
 
         if (isDev) {
             return USER_MAIN_DATA.find(user => {
                 if(user.id == userId){
-                    return user.userInfos
+                    console.log(USER_MAIN_DATA);
+                    console.log(user);
+                    const resultUser = new UserTypes({...user.data.userInfos})
+                    console.log(resultUser);
+                    return resultUser
                 }return null
-            })        
+            })   
             
         } else {
             const result = await fetch(`${server}:${port}/user/${userId}`)
-            data = await result.json()
+            const data = await result.json()
+            console.log(data);
+            const resultUser = new UserTypes({...data.data.userInfos})
+            console.log(resultUser);
+            return resultUser
 
         }
-        return data.data.userInfos
 
     } catch (error) {
         console.log(error);
@@ -80,7 +87,7 @@ export const getActivity = async (userId) => {
 export const getSessions = async (userId) => {
     try {
 
-        if (isDev) {
+        /*if (isDev) {
             return USER_AVERAGE_SESSIONS.find(user => {
                 if(user.userId == userId){
                     const resultSessions = user.sessions.map((sessions) => {
@@ -91,17 +98,17 @@ export const getSessions = async (userId) => {
                 }return null
             })          
             
-        } else {
+        } else {*/
 
             const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
             const data = await result.json()
-
+            console.log(data);
             const resultSessions = data.data.sessions.map((sessions) => {
                 return new SessionsTypes({...sessions})
             })
             console.log(resultSessions);
             return resultSessions
-        }
+       /* }*/
 
     } catch (error) {
         console.log(error);
@@ -119,9 +126,16 @@ export const getPerformance = async (userId) => {
 
         const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
         const data = await result.json()
-        
+        console.log(data);
 
+       /* const resultPerformance = data.data.data.map((performance) => {
+            return new PerformanceTypes({...performance})
+            
+        })
+        console.log(resultPerformance);
+        return resultPerformance*/
         return data.data
+
     } catch (error) {
         console.log(error);
     }

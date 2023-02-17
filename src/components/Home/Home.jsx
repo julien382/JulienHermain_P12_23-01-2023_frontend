@@ -51,6 +51,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getSessions(id)
+      console.log(data);
       setSessions(data)
     }
     fetchData()
@@ -77,7 +78,7 @@ const Home = () => {
               <div>
                 <Activity dataActivity={activities.sessions}/>
                 <div className='row'>
-                  <Sessions dataSessions={sessions}/>
+                  <Sessions dataSessions={sessions.sessions}/>
                   <Performance dataPerformance={performance.data} kindPerformance={performance.kind}/>
                   <Score dataScore={userMainData} />
                 </div>

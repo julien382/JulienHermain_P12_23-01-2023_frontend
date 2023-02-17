@@ -73,26 +73,20 @@ export const getActivity = async (userId) => {
 export const getSessions = async (userId) => {
     try {
 
-        /*if (isDev) {
-            return USER_AVERAGE_SESSIONS.find(user => {
-                if(user.userId == userId){
-                    const resultSessions = user.sessions.map((sessions) => {
-                        return new SessionsTypes({...sessions})
-                    })
-                    console.log(resultSessions);
-                    return resultSessions
-                }return null
-            })          
-            
-        } else {
+        if (isDev) {
+            const data = USER_AVERAGE_SESSIONS.find((user) => user.userId.toString() === userId); 
 
+            const userSessions = new SessionsTypes(data);
+            return userSessions            
+        } else {
             const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
             const data = await result.json()
-            const resultSessions = data.data.sessions.map((sessions) => {
-                return new SessionsTypes({...sessions})
-            })
-            return resultSessions
-        }*/
+
+            const userSessions = new SessionsTypes(data.data);
+            return userSessions;
+
+        }
+
 
     } catch (error) {
         console.log(error);

@@ -1,10 +1,8 @@
 class SessionsTypes {
-	day
-	sessionLength
 
-	constructor({day, sessionLength}) {
-		this.day = day
-		this.sessionLength = sessionLength
+	constructor(data) {
+		this.id = data.userId;
+		this.sessions = data.sessions;
 	}
 }
 

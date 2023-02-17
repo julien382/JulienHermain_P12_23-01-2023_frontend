@@ -1,6 +1,5 @@
 import './Sessions.css'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
-import SessionsTypes from '../../type/SessionsTypes';
 import PropTypes from 'prop-types'
 
 const Sessions = ({dataSessions}) => {
@@ -71,7 +70,12 @@ const Sessions = ({dataSessions}) => {
 
 
 Sessions.propTypes = {
-    dataSessions: PropTypes.arrayOf(PropTypes.instanceOf(SessionsTypes))
-}
+    dataSessions: PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.number,
+            sessionLength: PropTypes.number
+          })
+    )
+};
 
 export default Sessions

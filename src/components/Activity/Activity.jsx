@@ -1,13 +1,13 @@
 import './Activity.css'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 import PropTypes from 'prop-types'
-import ActivityTypes from '../../type/ActivityTypes';
 
 
 const Activity = ({dataActivity}) => {
     const data = dataActivity.map((item) => {
         return { ...item, day: item.day.split('')[9] }
     })
+
 
     return (
         <div className='activity'>
@@ -77,7 +77,13 @@ const Activity = ({dataActivity}) => {
 }
 
 Activity.propTypes = {
-    dataActivity: PropTypes.arrayOf(PropTypes.instanceOf(ActivityTypes)),
-}
+    dataActivity: PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.string,
+            kilogram: PropTypes.number,
+            calories: PropTypes.number
+          })
+    )
+};
 
 export default Activity

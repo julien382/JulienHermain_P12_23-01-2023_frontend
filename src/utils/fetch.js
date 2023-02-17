@@ -22,7 +22,7 @@ export const getUser = async (userId) => {
                 if(user.id == userId){
                     console.log(USER_MAIN_DATA);
                     console.log(user);
-                    const resultUser = new UserTypes({...user.data.userInfos})
+                    const resultUser = new UserTypes({...user.userInfos})
                     console.log(resultUser);
                     return resultUser
                 }return null

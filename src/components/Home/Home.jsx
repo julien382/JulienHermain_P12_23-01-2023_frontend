@@ -33,7 +33,6 @@ const Home = () => {
       if (data === undefined) {
           navigate("/")
       }
-
     }
     fetchData()
       
@@ -43,7 +42,6 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getActivity(id)
-      console.log(data);
       setActivities(data)
     }
     fetchData()
@@ -55,7 +53,6 @@ const Home = () => {
     const fetchData = async () => {
       const data = await getSessions(id)
       setSessions(data)
-
     }
     fetchData()
       
@@ -66,7 +63,6 @@ const Home = () => {
     const fetchData = async () => {
       const data = await getPerformance(id)
       setPerformance(data)
-
     }
     fetchData()
       

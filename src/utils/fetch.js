@@ -59,29 +59,6 @@ export const getActivity = async (userId) => {
             return userActivity;
 
         }
-/*
-        if (isDev) {
-            return USER_ACTIVITY.find(user => {
-                if(user.userId == userId){
-                    const resultActivity = user.sessions.map((activity) => {
-                        return new ActivityTypes({...activity})
-                    })
-                    console.log(resultActivity);
-                    return resultActivity
-                }return null
-            })          
-            
-        } else {
-            const result = await fetch(`${server}:${port}/user/${userId}/activity/`)
-            const data = await result.json()
-    
-            const resultActivity = data.data.sessions.map((activity) => {
-                return new ActivityTypes({...activity})
-            })
-            return resultActivity
-            
-        }*/
-
 
     } catch (error) {
         console.log(error);
@@ -107,7 +84,7 @@ export const getSessions = async (userId) => {
                 }return null
             })          
             
-        } else {*/
+        } else {
 
             const result = await fetch(`${server}:${port}/user/${userId}/average-sessions/`)
             const data = await result.json()
@@ -115,7 +92,7 @@ export const getSessions = async (userId) => {
                 return new SessionsTypes({...sessions})
             })
             return resultSessions
-       /* }*/
+        }*/
 
     } catch (error) {
         console.log(error);

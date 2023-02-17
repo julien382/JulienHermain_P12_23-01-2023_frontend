@@ -1,4 +1,5 @@
 import './Name.css'
+import propTypes from 'prop-types'
 
 const Name = ({userName}) => {
 
@@ -13,5 +14,9 @@ const Name = ({userName}) => {
         </div>
     )
 }
+
+Name.propTypes = {
+    userName: propTypes.string
+  };
 
 export default Name

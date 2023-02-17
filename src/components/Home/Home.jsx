@@ -40,7 +40,6 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getActivity(id)
-      console.log(data);
       setActivities(data)
     }
     fetchData()
@@ -51,7 +50,6 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getSessions(id)
-      console.log(data);
       setSessions(data)
     }
     fetchData()

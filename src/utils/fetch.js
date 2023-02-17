@@ -106,7 +106,7 @@ export const getPerformance = async (userId) => {
 
             const userPerformance = new PerformanceTypes(data);
             return userPerformance  
-                      
+
         } else {
             const result = await fetch(`${server}:${port}/user/${userId}/performance/`)
             const data = await result.json()

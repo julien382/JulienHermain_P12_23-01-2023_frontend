@@ -1,6 +1,6 @@
 import './Sessions.css'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 const Sessions = ({dataSessions}) => {
     const weekdays = ['L ', 'M ', 'M ', 'J ', 'V ', 'S ', 'D ']
@@ -70,12 +70,12 @@ const Sessions = ({dataSessions}) => {
 
 
 Sessions.propTypes = {
-    dataSessions: PropTypes.arrayOf(
-        PropTypes.shape({
-            day: PropTypes.number,
-            sessionLength: PropTypes.number
-          })
-    )
-};
+    dataSessions: propTypes.arrayOf(
+        propTypes.shape({
+        day: propTypes.number.isRequired,
+        sessionLength: propTypes.number.isRequired
+      })
+    ).isRequired
+  };
 
 export default Sessions

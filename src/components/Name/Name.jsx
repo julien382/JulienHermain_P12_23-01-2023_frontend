@@ -16,7 +16,7 @@ const Name = ({userName}) => {
 }
 
 Name.propTypes = {
-    userName: propTypes.string
+    userName: propTypes.string.isRequired,
   };
 
 export default Name

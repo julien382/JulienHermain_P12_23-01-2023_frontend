@@ -1,6 +1,6 @@
 import './Score.css'
 import { RadialBarChart, RadialBar, ResponsiveContainer} from 'recharts';
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 
 const Score = ({dataScore}) => {
@@ -39,7 +39,7 @@ const Score = ({dataScore}) => {
 }
 
 Score.propTypes = {
-    dataScore: PropTypes.object
+    dataScore: propTypes.object.isRequired
 }
 
 export default Score

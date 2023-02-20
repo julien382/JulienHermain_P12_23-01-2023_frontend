@@ -1,21 +1,21 @@
 class UserTypes {
 
 	/**
-   * Crée une instance de la classe "UserTypes".
+   * Create an instance of the "UserTypes" class.
    * 
-   * @param {Object} data - Les données pour initialiser l'instance.
-   * @param {string} data.id - L'ID de l'utilisateur.
+   * @param {Object} data - The data to initialize the instance.
+   * @param {string} data.id - User ID.
    * @param {Object} data.userInfos - Les informations de l'utilisateur.
-   * @param {string} data.userInfos.firstName - Le prénom de l'utilisateur.
-   * @param {string} data.userInfos.lastName - Le nom de famille de l'utilisateur.
-   * @param {number} data.userInfos.age - L'âge de l'utilisateur.
-   * @param {number} data.todayScore - Le score total de l'utilisateur.
-   * @param {number} data.score - Le score total de l'utilisateur.
-   * @param {Object} data.keyData - Les données clés de l'utilisateur.
-   * @param {number} data.keyData.calorieCount - Le nombre de calories de l'utilisateur.
-   * @param {number} data.keyData.proteinCount - Le nombre de protéines de l'utilisateur.
-   * @param {number} data.keyData.carbohydrateCount - Le nombre de glucides de l'utilisateur.
-   * @param {number} data.keyData.lipidCount - Le nombre de lipides de l'utilisateur.
+   * @param {string} data.userInfos.firstName - The user's first name.
+   * @param {string} data.userInfos.lastName - The user's last name.
+   * @param {number} data.userInfos.age - The age of the user.
+   * @param {number} data.todayScore - The user's total score.
+   * @param {number} data.score - The user's total score.
+   * @param {Object} data.keyData - The user's key data.
+   * @param {number} data.keyData.calorieCount - The user's calorie count.
+   * @param {number} data.keyData.proteinCount - The user's protein count.
+   * @param {number} data.keyData.carbohydrateCount - The user's carb count.
+   * @param {number} data.keyData.lipidCount - The user's lipid count.
    */
 
 	constructor(data) {

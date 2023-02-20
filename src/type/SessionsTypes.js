@@ -1,11 +1,11 @@
 class SessionsTypes {
 
 	/**
-   * Crée une instance de la classe "SessionsTypes".
+   * Create an instance of the "SessionsTypes" class.
    * 
-   * @param {Object} data - Les données pour initialiser l'instance.
-   * @param {string} data.userId - L'ID de l'utilisateur.
-   * @param {Array} data.sessions - Les sessions de l'utilisateur.
+   * @param {Object} data - The data to initialize the instance.
+   * @param {string} data.userId - User ID.
+   * @param {Array} data.sessions - User sessions.
    */
 
 	constructor(data) {

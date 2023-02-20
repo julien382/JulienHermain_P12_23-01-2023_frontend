@@ -1,11 +1,11 @@
-class Performance {
+class PerformanceTypes {
 
 	/**
-   * Crée une instance de la classe "Performance".
+   * Create an instance of the "PerformanceTypes" class.
    * 
-   * @param {Object} data - Les données pour initialiser l'instance.
-   * @param {Array} data.data - Les données de performance.
-   * @param {Object} data.kind - Le type de performance.
+   * @param {Object} data - The data to initialize the instance.
+   * @param {Array} data.data - Performance data.
+   * @param {Object} data.kind - The type of performance.
    */
 
 	constructor(data) {
@@ -14,4 +14,4 @@ class Performance {
 	}
 }
 
-export default Performance
+export default PerformanceTypes

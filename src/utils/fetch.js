@@ -11,6 +11,8 @@ const port = "3000"
 const isDev = process.env.NODE_ENV === 'development'
 
 /**
+ * @async
+ * @function
  * @param {number} userId 
  * @returns {(Promise<UserTypes[]>| null)}
  */
@@ -39,6 +41,8 @@ export const getUser = async (userId) => {
 
 
 /**
+ * @async
+ * @function
  * @param {number} userId 
  * @returns {(Promise<ActivityTypes[]>| null)}
  */
@@ -67,6 +71,8 @@ export const getActivity = async (userId) => {
 
 
 /**
+ * @async
+ * @function
  * @param {number} userId 
  * @returns {(Promise<SessionsTypes[]>| null)}
  */
@@ -95,6 +101,8 @@ export const getSessions = async (userId) => {
 
 
 /**
+ * @async
+ * @function
  * @param {number} userId 
  * @returns {(PerformanceTypes[]| null)}
  */

@@ -6,6 +6,8 @@ Application SportSee Back-end + Front-end
 
 - VS-Code
 - Node >= v16.14.0
+- Lancer `npm i` dans `./backend` `./frontend`
+
 
 ## Back-end:
 `npm run start` run the back-end server

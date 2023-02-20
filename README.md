@@ -1,8 +1,17 @@
-Project SportSee
+# Project SportSee
 
-Back-end:
-"npm run start" run the back-end server
+Application SportSee Back-end + Front-end
 
-Front-end:
-"npm start" run the front-end server
+## Pré-requis
+
+- VS-Code
+- Node >= v16.14.0
+
+## Back-end:
+`npm run start` run the back-end server
+
+## Front-end:
+`npm start` run the front-end server
 Open http://localhost:3000 to view it in your browser.
+
+Pendant Développement les données utiliser sont des données mocké: `./src/data/mocked.js`

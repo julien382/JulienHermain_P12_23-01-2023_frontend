@@ -6,7 +6,7 @@ Application SportSee Back-end + Front-end
 
 - VS-Code
 - Node >= v16.14.0
-- Lancer `npm i` dans `./backend` `./frontend`
+- Run `npm i` in `./backend` `./frontend`
 
 
 ## Back-end:
@@ -16,4 +16,4 @@ Application SportSee Back-end + Front-end
 `npm start` run the front-end server
 Open http://localhost:3000 to view it in your browser.
 
-Pendant Développement les données utiliser sont des données mocké: `./src/data/mocked.js`
+During Development the data used is mocked data: `./src/data/mocked.js`

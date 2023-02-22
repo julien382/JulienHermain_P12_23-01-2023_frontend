@@ -14,6 +14,7 @@ Application SportSee Back-end + Front-end
 
 ## Front-end:
 `npm start` run the front-end server
+
 Open http://localhost:3000 to view it in your browser.
 
 During Development the data used is mocked data: `./src/data/mocked.js`
